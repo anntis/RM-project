@@ -1,4 +1,6 @@
+import numpy as np
 import pandas as pd
+import statsmodels.api as sm
 import matplotlib.pyplot as plt
 
 def convert_to_long_format(df, id_vars, var_name, value_name):
@@ -36,19 +38,9 @@ def save_dataframe_as_image(df, filename):
     Returns:
         None
     """
-    # Create a table as an image
-    fig, ax = plt.subplots(figsize=(10, len(df) * 0.3))  # Adjust size based on the number of rows
-    ax.axis('off')  # Turn off axes
+    fig, ax = plt.subplots(figsize=(10, 4))
+    ax.axis('tight')
+    ax.axis('off')
+    table = ax.table(cellText=df.values, colLabels=df.columns, loc='center', cellLoc='center')
+    plt.savefig(filename)
     
-    # Draw the table
-    table = ax.table(cellText=df.values, 
-                     colLabels=df.columns, 
-                     loc='center', 
-                     cellLoc='center')
-    
-    table.auto_set_font_size(False)
-    table.set_fontsize(8)
-    
-    # Save as PNG
-    plt.savefig(filename, bbox_inches='tight', dpi=300)
-    plt.close()
