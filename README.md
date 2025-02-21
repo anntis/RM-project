@@ -1,2 +1,6 @@
 # RM-project
-The code for Research Module in Microeconometrics
+The code for Research Module in Microeconometrics.
+
+The research is motivated by rising concerns about potential relation between migration and increased waste production, causing the need to examine whether these concerns are reasonable. This study investigates the impact of migration policy on municipal waste levels in EU countries, using Double Machine Learning (DML) approach to estimate the Average Treatment Effect (ATE) of the policy. The policy under examination is "The Global Compact for Safe, Orderly and Regular Migration (GCM)", which reflects a country's willingness and overall stance towards accepting migrants and integrating them into society. The study incorporates several nuisance variables, all of which could also affect waste levels.
+
+By applying both traditional ML and the DML approaches it is shown that countries adopting the policy produce more municipal waste per capita. This work highlights how DML can provide a more accurate estimate of policy effects, correcting for biases.
